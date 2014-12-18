@@ -2,13 +2,20 @@
 <head>
   <title>#tfyi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+  <!-- JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="slick.min.js"></script>
+
+  <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/css/normalize.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/css/foundation.min.css">
+  <link rel="stylesheet" type="text/css" href="slick.css"/>
   <link href='http://fonts.googleapis.com/css?family=Yellowtail|Sonsie+One|Syncopate:400,700|Abril+Fatface|Satisfy' rel='stylesheet' type='text/css'>
   <style type="text/css">
     * {
       font-family: 'Abril Fatface', cursive;
+      text-align: center;
     }
     body {
       background: url('gplaypattern.png');
@@ -16,16 +23,59 @@
     h1 {
       font-family: 'Syncopate', sans-serif;
       font-weight: bold;
-      text-align: center;
-      font-size: 7em;
+      font-size: 5em;
+    }
+
+    img {
+      margin: 0 auto;
+      max-height: 450px;
+    }
+
+    .slide {
+      margin: 0 20px;
+    }
+
+    .carousel {
+      padding-top: 100px;
+      background: grey;
+      max-height: 500px;
+      border: 10px solid white;
     }
   </style>
 </head>
 <body>
-  <div class='row'>
+  <section class='row'>
     <div class='small-12 columns'>
-      <h1>Fandolf</h1>
+      <h1>Fandolf 4 Lyfe</h1>
     </div>
-  </div>
+  </section>
+  <section class='row'>
+    <div class='carousel'>
+      <div class='slide'>
+        <img src="http://scontent-a-pao.cdninstagram.com/hphotos-xap1/t51.2885-15/10784823_1490038174594561_1325992142_n.jpg" tite='fandolf-tough'>
+      </div>
+      <div class='slide'>
+        <img src="http://photos-h.ak.instagram.com/hphotos-ak-xap1/t51.2885-15/10601874_724530957620519_403114848_n.jpg" title='pandolf-osl'>
+      </div>
+      <div class='slide'>
+        <img src="http://photos-a.ak.instagram.com/hphotos-ak-xpa1/t51.2885-15/10375676_803388613059360_132799775_n.jpg" title='wolf-nap'>
+      </div>
+      <div class='slide'>
+        <img src="http://photos-h.ak.instagram.com/hphotos-ak-xpa1/t51.2885-15/10632383_741665495901439_116870185_n.jpg" title='fandolf-wine-country'>
+      </div>
+    </div>
+  </section>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.carousel').slick({
+        autoplay: true,
+        infinite: true,
+        slidesToShow: 3,
+        autoplaySpeed: 1000,
+        // centerMode: true,
+        // centerPadding: '60px',
+      })
+    })
+  </script>
 </body>
 </html>
