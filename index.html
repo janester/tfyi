@@ -27,17 +27,32 @@
       background: url('tardis-christmas.png');
       overflow: hidden;
     }
-    h1 span{
+
+    h1 span.letter{
       font-family: 'XMasLights';
       font-size: 3em;
-      color: #e12b24;
-      line-height: 0.5em;
+      color: #37ad5c;
+      line-height: 0.75em;
       text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-      letter-spacing: -14px;
+      letter-spacing: -30px;
+      margin: 0;
+      position: relative;
     }
 
-    h1 span:nth-child(even) {
-      color: #37ad5c;
+    .bulb {
+      background: white;
+      border-radius: 50%;
+      height: 66px;
+      width: 43px;
+      display: inline-block;
+      position: absolute;
+      left: 7px;
+      top: 20px;
+      z-index: -1;
+    }
+
+    .letter:nth-child(even) {
+      color: #e12b24;
     }
 
     img {
@@ -55,6 +70,7 @@
       max-height: 355px;
       border: 10px solid #37ad5c;
       margin-top: 50px;
+      box-shadow: 0 0 100px #e12b24;
     }
 
     .slick-slide {
@@ -107,24 +123,72 @@
   <section class='row' style='padding-top: 30px'>
     <div class='small-12 columns'>
       <h1>
-        <span>M</span>
-        <span>E</span>
-        <span>R</span>
-        <span>R</span>
-        <span>Y</span>
+        <span class='letter'>
+          M
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          E
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          R
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          R
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          Y
+          <span class='bulb'></span>
+        </span>
       </h1>
       <h1>
-        <span>F</span>
-        <span>A</span>
-        <span>N</span>
-        <span>D</span>
-        <span>O</span>
-        <span>L</span>
-        <span>F</span>
-        <span>S</span>
-        <span>M</span>
-        <span>A</span>
-        <span>S</span>
+        <span class='letter'>
+          F
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          A
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          N
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          D
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          O
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          L
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          F
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          S
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          M
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          A
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          S
+          <span class='bulb'></span>
+        </span>
       </h1>
     </div>
   </section>
