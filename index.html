@@ -31,9 +31,9 @@
     h1 span.letter{
       font-family: 'XMasLights';
       font-size: 3em;
-      color: #37ad5c;
+      color: black;
       line-height: 0.75em;
-      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
       letter-spacing: -30px;
       margin: 0;
       position: relative;
@@ -52,9 +52,9 @@
       box-shadow: 0 0 100px white;
     }
 
-    .letter:nth-child(even) {
+/*    .letter:nth-child(even) {
       color: #e12b24;
-    }
+    }*/
 
     img {
       margin: 0 auto;
@@ -243,6 +243,15 @@
 
       $('.opener').on('click', function(){
         $(this).hide();
+      })
+
+      $.each($('.bulb'), function(i, bulb){
+        if(i%2 === 0){
+          $(bulb).css('background', '#e12b24')
+        }
+        else {
+          $(bulb).css('background', '#37ad5c')
+        }
       })
     })
   </script>
