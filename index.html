@@ -23,16 +23,38 @@
       text-align: center;
     }
     body {
-      background: url('tartan.jpg');
+      /*background: url('tartan.jpg');*/
+      background: url('tardis-christmas.png');
       overflow: hidden;
     }
-    h1 {
+
+    h1 span.letter{
       font-family: 'XMasLights';
-      font-size: 10em;
-      color: white;
+      font-size: 3em;
+      color: black;
       line-height: 0.75em;
-      text-shadow: -1px 0 rgb(186,10,10), 0 1px rgb(186,10,10), 1px 0 rgb(186,10,10), 0 -1px rgb(186,10,10);
+      /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+      letter-spacing: -30px;
+      margin: 0;
+      position: relative;
     }
+
+    .bulb {
+      background: white;
+      border-radius: 50%;
+      height: 66px;
+      width: 43px;
+      display: inline-block;
+      position: absolute;
+      left: 7px;
+      top: 20px;
+      z-index: -1;
+      box-shadow: 0 0 100px white;
+    }
+
+/*    .letter:nth-child(even) {
+      color: #e12b24;
+    }*/
 
     img {
       margin: 0 auto;
@@ -45,10 +67,12 @@
 
     .carousel {
       padding-top: 40px;
-      background: rgb(25,25,25);
+      background: #2d3762;
       max-height: 355px;
-      border: 10px solid rgb(5,74,7);
+      border: 10px solid #37ad5c;
       margin-top: 50px;
+      box-shadow: 0 0 100px #37ad5c;
+      border-radius: 20px;
     }
 
     .slick-slide {
@@ -75,7 +99,6 @@
 
     .opener img{
       transform: scale(3,3);
-      -webkit-transform: scale(3,3);
       position: relative;
       top: 255px;
       z-index: 2;
@@ -92,16 +115,83 @@
       padding: 100px 50px;
       z-index: 1;
       transform: rotate(-40deg);
-      -webkit-transform: rotate(-40deg);
     }
+
+
 
   </style>
 </head>
 <body>
-  <section class='row'>
+  <section class='row' style='padding-top: 30px'>
     <div class='small-12 columns'>
-      <h1>Merry</h1>
-      <h1>Fandolfsmas!</h1>
+      <h1>
+        <span class='letter'>
+          M
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          E
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          R
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          R
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          Y
+          <span class='bulb'></span>
+        </span>
+      </h1>
+      <h1>
+        <span class='letter'>
+          F
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          A
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          N
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          D
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          O
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          L
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          F
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          S
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          M
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          A
+          <span class='bulb'></span>
+        </span>
+        <span class='letter'>
+          S
+          <span class='bulb'></span>
+        </span>
+      </h1>
     </div>
   </section>
   <section class='row'>
@@ -153,6 +243,15 @@
 
       $('.opener').on('click', function(){
         $(this).hide();
+      })
+
+      $.each($('.bulb'), function(i, bulb){
+        if(i%2 === 0){
+          $(bulb).css('background', '#e12b24')
+        }
+        else {
+          $(bulb).css('background', '#37ad5c')
+        }
       })
     })
   </script>
