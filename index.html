@@ -77,6 +77,20 @@
       transform: scale(3,3);
       position: relative;
       top: 255px;
+      z-index: 2;
+    }
+
+    .opener h2 {
+      display: inline-block;
+      position: absolute;
+      left: 500px;
+      top: 100px;
+      color: white;
+      font-family: inherit;
+      background: rgb(5,74,7);
+      padding: 100px 50px;
+      z-index: 1;
+      transform: rotate(-40deg);
     }
 
   </style>
@@ -121,6 +135,7 @@
   </section>
   <section class='opener'>
     <img src="christmas-bow.png">
+    <h2>Click to Open</h2>
   </section>
 
   <script type="text/javascript">
