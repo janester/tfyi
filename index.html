@@ -5,7 +5,9 @@
 
   <!-- JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
   <script type="text/javascript" src="slick.min.js"></script>
+  <script type="text/javascript" src="https://s3.amazonaws.com/jane-resume/pics.js"></script>
 
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/css/normalize.min.css">
@@ -196,33 +198,6 @@
   </section>
   <section class='row'>
     <div class='carousel'>
-      <div class='slide'>
-        <img src="http://scontent-a-pao.cdninstagram.com/hphotos-xap1/t51.2885-15/10784823_1490038174594561_1325992142_n.jpg" tite='fandolf-tough'>
-      </div>
-      <div class='slide'>
-        <img src="http://photos-h.ak.instagram.com/hphotos-ak-xap1/t51.2885-15/10601874_724530957620519_403114848_n.jpg" title='pandolf-osl'>
-      </div>
-      <div class='slide'>
-        <img src="http://photos-a.ak.instagram.com/hphotos-ak-xpa1/t51.2885-15/10375676_803388613059360_132799775_n.jpg" title='wolf-nap'>
-      </div>
-      <div class='slide'>
-        <img src="http://photos-h.ak.instagram.com/hphotos-ak-xpa1/t51.2885-15/10632383_741665495901439_116870185_n.jpg" title='fandolf-wine-country'>
-      </div>
-      <div class='slide'>
-        <img src="http://photos-h.ak.instagram.com/hphotos-ak-xaf1/t51.2885-15/10643952_706813779398447_662768537_n.jpg" title='fandolf-couch'>
-      </div>
-      <div class='slide'>
-        <img src="http://photos-d.ak.instagram.com/hphotos-ak-xfp1/t51.2885-15/10644007_521295458005835_535729749_n.jpg" title='wolf-chameleon'>
-      </div>
-      <div class='slide'>
-        <img src="http://photos-c.ak.instagram.com/hphotos-ak-xap1/t51.2885-15/10655124_532940700172674_519718011_n.jpg" title='x-files-cups'>
-      </div>
-      <div class='slide'>
-        <img src="http://photos-h.ak.instagram.com/hphotos-ak-xpf1/t51.2885-15/1971437_708164065937975_748842752_n.jpg" title='bfox-rox'>
-      </div>
-      <div class='slide'>
-        <img src="http://static.comicvine.com/uploads/scale_small/13/132162/3332057-x-files-season-7.jpg" title='mulder-scully'>
-      </div>
     </div>
   </section>
   <section class='opener'>
@@ -231,7 +206,19 @@
   </section>
 
   <script type="text/javascript">
+    var createSlides = function(){
+      var carousel = $('.carousel')
+      var images = _.shuffle(_.union(common, twolf))
+      $.each(images, function(i, image){
+        var slide = $('<div class="slide">').append("<img src='"+ image.src +"' title='"+ image.title +"'>")
+        carousel.append(slide);
+      })
+    };
+
     $(document).ready(function(){
+
+      createSlides();
+
       $('.carousel').slick({
         autoplay: true,
         infinite: true,
